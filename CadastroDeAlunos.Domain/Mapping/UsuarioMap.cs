@@ -7,9 +7,10 @@ namespace CadastroDeAlunos.Domain.Mapping
         public UsuarioMap(EntityTypeBuilder<Usuario> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Email).IsRequired().HasMaxLength(100);
             builder.Property(x => x.UserLogin).IsRequired().HasMaxLength(20);
             builder.Property(x => x.Senha).IsRequired();
-            builder.HasOne(x => x.AlunoProfile).WithOne(u => u.Usuario).HasForeignKey<AlunoProfile>(x => x.Id);
+            builder.HasOne(x => x.Aluno).WithOne().HasForeignKey<Aluno>(x => x.Id);
         }
     }
 }

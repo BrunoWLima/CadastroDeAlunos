@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CadastroDeAlunos.Web.Models
 {
-    public class AlunoProfileViewModel
+    public class AlunoViewModel
     {
 
         [HiddenInput]

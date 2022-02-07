@@ -9,7 +9,9 @@ namespace CadastroDeFamilias.Api.Library
         public PerfilMapeamento()
         {
             CreateMap<Usuario, UsuarioViewModel>();
-            CreateMap<AlunoProfile, AlunoProfileViewModel>();
+            CreateMap<UsuarioViewModel, Usuario>();
+            CreateMap<Aluno, AlunoViewModel>();
+            CreateMap<AlunoViewModel, Aluno>();
         }
     }
 }

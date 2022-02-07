@@ -1,26 +1,31 @@
-﻿@model IEnumerable<CadastroDeAlunos.Web.Models.UsuarioViewModel>
-
+﻿@model IEnumerable<CadastroDeAlunos.Web.Models.AlunoViewModel>
 @{
-    ViewData["Title"] = "Usuários";
+    ViewData["Title"] = "Alunos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Lista de Usuários</h1>
+<h1>Alunos</h1>
 
 <p>
-    <a asp-action="Create">Novo Usuario</a>
+    <a asp-action="Create">Novo Aluno</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.NomeAluno)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserLogin)
+                @Html.DisplayNameFor(model => model.NumeroContato)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Senha)
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
             </th>
             <th></th>
         </tr>
@@ -30,13 +35,19 @@
         {
             <tr>
                 <td>
+                    @Html.DisplayFor(modelItem => item.NomeAluno)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.UserLogin)
+                    @Html.DisplayFor(modelItem => item.NumeroContato)
                 </td>
                 <td>
-                    @Html.Display("**********")
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cidade)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

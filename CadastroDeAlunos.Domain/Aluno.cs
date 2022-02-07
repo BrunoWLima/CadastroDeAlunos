@@ -1,6 +1,6 @@
 ﻿namespace CadastroDeAlunos.Domain
 {
-    public class AlunoProfile : BaseEntity
+    public class Aluno : BaseEntity
     {
         public string NomeAluno { get; set; }
         public string Email { get; set; }

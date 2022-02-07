@@ -6,13 +6,13 @@ namespace CadastroDeAlunos.Service
 {
     public class UsusariorService : IUsuarioService
     {
-        private IRepository<Usuario> UserRepository;
-        private IRepository<AlunoProfile> AlunoProfileRepository;
+        private readonly IRepository<Aluno> AlunoRepository;
+        private readonly IRepository<Usuario> UserRepository;
 
-        public UsusariorService(IRepository<Usuario> userRepository, IRepository<AlunoProfile> alunoProfileRepository)
+        public UsusariorService(IRepository<Aluno> alunoRepository, IRepository<Usuario> userRepository)
         {
+            AlunoRepository = alunoRepository;
             UserRepository = userRepository;
-            AlunoProfileRepository = alunoProfileRepository;
         }
 
         public void AddUser(Usuario user)
@@ -22,21 +22,20 @@ namespace CadastroDeAlunos.Service
 
         public void DeleteUser(int id)
         {
-            AlunoProfile userProfile = AlunoProfileRepository.GetById(id);
-            AlunoProfileRepository.Delete(userProfile);
+            Aluno aluno = AlunoRepository.GetById(id);
+            AlunoRepository.Delete(aluno);
             Usuario user = UserRepository.GetById(id);
             UserRepository.Delete(user);
-            UserRepository.SaveChanges();
-        }
-
-        public Usuario GetUserById(int id)
-        {
-            return UserRepository.GetById(id);
         }
 
         public IEnumerable<Usuario> GetAllUsers()
         {
             return UserRepository.GetAll();
+        }
+
+        public Usuario GetUserById(int id)
+        {
+            return UserRepository.GetById(id);
         }
 
         public void UpdateUser(Usuario user)

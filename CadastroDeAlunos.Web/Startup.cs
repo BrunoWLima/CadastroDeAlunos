@@ -27,7 +27,7 @@ namespace CadastroDeAlunos.Web
             services.AddControllersWithViews();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IUsuarioService, UsusariorService>();
-            services.AddTransient<IAlunoProfileService, AlunoProfileService>();
+            services.AddTransient<IAlunoService, AlunoService>();
             services.AddAutoMapper(typeof(PerfilMapeamento));
         }
 

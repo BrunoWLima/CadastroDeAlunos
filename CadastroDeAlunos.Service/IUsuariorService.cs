@@ -5,10 +5,10 @@ namespace CadastroDeAlunos.Service
 {
     public interface IUsuarioService
     {
+        void AddUser(Usuario usuario);
+        void DeleteUser(int id);
         IEnumerable<Usuario> GetAllUsers();
         Usuario GetUserById(int id);
-        void AddUser(Usuario user);
-        void UpdateUser(Usuario user);
-        void DeleteUser(int id);
+        void UpdateUser(Usuario usuario);
     }
 }
