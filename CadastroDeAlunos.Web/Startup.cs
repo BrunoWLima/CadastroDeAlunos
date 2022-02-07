@@ -1,6 +1,6 @@
 using CadastroDeAlunos.Infra;
 using CadastroDeAlunos.Service;
-using CadastroDeFamilias.Api.Library;
+using CadastroDeAlunos.Web.Library;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

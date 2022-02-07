@@ -2,7 +2,7 @@
 using CadastroDeAlunos.Domain;
 using CadastroDeAlunos.Web.Models;
 
-namespace CadastroDeFamilias.Api.Library
+namespace CadastroDeAlunos.Web.Library
 {
     public class PerfilMapeamento : Profile
     {
